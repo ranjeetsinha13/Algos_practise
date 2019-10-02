@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Arrays
 
 class QuickSort {
     private fun partition(intArray: Array<Int>, low: Int, high: Int): Int {
