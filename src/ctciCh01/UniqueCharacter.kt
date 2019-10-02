@@ -23,7 +23,7 @@ class UniqueCharacter {
     fun isUnique2(s: String): Boolean {
 
         val array = Array(127) { false }
-        
+
         for (i in s.indices) {
             if (array[s[i].toInt()]) {
                 return false
