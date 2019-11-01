@@ -17,7 +17,7 @@ class URLlify {
         var newArray = CharArray(s.length + countSpaces(charArr) * 2) { ' ' }
 
         var pos = 0
-        for (i in 0 until charArr.size) {
+        for (i in charArr.indices) {
             if (charArr[i] != ' ') {
                 newArray[pos++] = charArr[i]
             } else {
