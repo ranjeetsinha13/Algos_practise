@@ -1,3 +1,4 @@
+import java.lang.Math.abs
 import java.util.Arrays
 
 
@@ -30,11 +31,47 @@ class FindMissing {
         }
         return m + 1
     }
+
+    fun findMissing2(nums: IntArray): Int {
+        if (nums.isEmpty()) {
+            return 1
+        }
+        Arrays.sort(nums)
+
+        var j = 1
+
+        for (i in 1 until nums.size) {
+            if (nums[i] != nums[i - 1]) {
+                nums[j++] = nums[i]
+            }
+        }
+        var start = 0
+        for (i in 0 until j) {
+            if (nums[i] > 0) {
+                start = i
+                break
+            }
+        }
+
+        var count = 1
+        for (i in start until j) {
+            if (nums[i] != count) {
+                return count
+            }
+
+            count++
+        }
+        count = j - start + 1
+        return count
+    }
+
+
 }
 
 fun main() {
 
     val a = intArrayOf(0, 10, 2, -10, -20)
     println(FindMissing().findMissing(a))
+    println(FindMissing().findMissing2(intArrayOf(1)))
 }
 
