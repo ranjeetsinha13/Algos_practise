@@ -18,6 +18,7 @@ class IntersectionofLists {
     fun findIntersection(arr1: Array<Int>, arr2: Array<Int>): ArrayList<Int> {
         var intersectionofLists = ArrayList<Int>()
 
+
         val b = BinarySearch()
 
         for (element in arr1) {

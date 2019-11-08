@@ -58,13 +58,13 @@ class FirstUniqueChar {
         while (list.size > 1) {
 
             if (counter % 2 == 0) {
-                list.removeAt()
+                //list.removeAt()
             } else {
 
             }
         }
 
-    }
+    return 0}
 
 }
 
