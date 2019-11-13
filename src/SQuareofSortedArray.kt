@@ -2,7 +2,7 @@ class SQuareofSortedArray {
 
     fun sortedSquares(A: IntArray): IntArray {
 
-        var sq = IntArray(A.size) { i -> -1 }
+        var sq = IntArray(A.size) { -1 }
 
         var j = 0
         while (j < A.size && A[j] < 0) {

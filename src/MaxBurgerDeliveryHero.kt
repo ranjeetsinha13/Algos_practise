@@ -31,6 +31,6 @@ class MaxBurgerDeliveryHero {
 
 fun main() {
 
-    println(MaxBurgerDeliveryHero().maxBurger(7, 18).contentToString())
+    println(MaxBurgerDeliveryHero().maxBurger(7, 19).contentToString())
 
 }

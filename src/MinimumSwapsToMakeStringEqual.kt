@@ -1,4 +1,3 @@
-import java.lang.StringBuilder
 
 class MinimumSwapsToMakeStringEqual {
     fun minimumSwap(s1: String, s2: String): Int {
@@ -36,11 +35,6 @@ class MinimumSwapsToMakeStringEqual {
 
     }
 
-
-
-    fun minimumSwap2(s1: String, s2: String): Int {
-        return 0
-    }
 
 
 }

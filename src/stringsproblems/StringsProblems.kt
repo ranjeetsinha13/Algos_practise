@@ -35,9 +35,27 @@ class StringsProblems {
         return String(ch)
 
     }
+
+    fun maxNumberOfBalloons(text: String): Int {
+
+        var arr = IntArray(5) { 0 }
+
+        var chArr = charArrayOf('b', 'a', 'l', 'o', 'n')
+
+        for (ch in text) {
+
+            if (ch in chArr) {
+                arr[chArr.indexOf(ch)]++
+            }
+        }
+
+        return Math.min(Math.min(arr[3] / 2, arr[2] / 2), Math.min(Math.min(arr[0], arr[1]), arr[4]))
+
+    }
 }
 
 fun main() {
     StringsProblems().reverse(charArrayOf('h', 'e', 'l', 'l', 'o'))
     println(StringsProblems().reverseVowels("hello"))
+    println(StringsProblems().maxNumberOfBalloons("balon"))
 }

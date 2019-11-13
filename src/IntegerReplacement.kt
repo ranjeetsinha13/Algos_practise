@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/integer-replacement/
 class IntegerReplacement {
     fun integerReplacement(n: Int): Int {
         if (n == 1) {

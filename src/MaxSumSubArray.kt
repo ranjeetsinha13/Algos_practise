@@ -14,8 +14,6 @@ class MaxSumSubArray {
 
             maxEndingHere = 0.coerceAtLeast(maxEndingHere)
 
-            Arrays.sort(A)
-
         }
 
         return maxSoFar

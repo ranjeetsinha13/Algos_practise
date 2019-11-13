@@ -10,7 +10,8 @@ class FirstUniqueChar {
 
             if (cc.containsKey(s[i])) {
                 var count = cc[s[i]]?.count ?: 0
-                cc[s[i]] = CharCount(i, count + 1)
+
+                cc[s[i]] = CharCount(cc[s[i]]?.index!!, count + 1)
             } else {
                 cc[s[i]] = CharCount(i, 1)
             }
@@ -64,7 +65,8 @@ class FirstUniqueChar {
             }
         }
 
-    return 0}
+        return 0
+    }
 
 }
 
