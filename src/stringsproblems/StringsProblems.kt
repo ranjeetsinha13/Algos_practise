@@ -52,10 +52,40 @@ class StringsProblems {
         return Math.min(Math.min(arr[3] / 2, arr[2] / 2), Math.min(Math.min(arr[0], arr[1]), arr[4]))
 
     }
+
+    // https://leetcode.com/problems/find-common-characters/
+    fun commonChars(A: Array<String>): List<String> {
+
+        var charCount = IntArray(26) { 0 }
+
+
+        var result = mutableListOf<String>()
+
+        for (s in A) {
+            for (ch in s) {
+                charCount[ch - 'a']++
+            }
+        }
+
+
+        for (i in charCount.indices) {
+
+            if (charCount[i] >= A.size) {
+                for (j in 1..charCount[i] / A.size) {
+                    result.add((i + 'a'.toInt()).toChar().toString())
+                }
+            }
+
+        }
+
+        return result
+
+    }
 }
 
 fun main() {
     StringsProblems().reverse(charArrayOf('h', 'e', 'l', 'l', 'o'))
     println(StringsProblems().reverseVowels("hello"))
     println(StringsProblems().maxNumberOfBalloons("balon"))
+    println(StringsProblems().commonChars(arrayOf("bella", "label", "roller")))
 }
