@@ -1,6 +1,5 @@
 import java.util.*
-import kotlin.collections.ArrayList
-
+ 
 class IntersectionofLists {
 
     fun intersection(arr1: Array<Int>, arr2: Array<Int>): IntArray {
