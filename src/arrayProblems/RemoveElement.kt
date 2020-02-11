@@ -1,4 +1,4 @@
-import java.util.*
+package arrayProblems
 
 //https://leetcode.com/problems/remove-element/
 class RemoveElement {
@@ -59,14 +59,30 @@ class RemoveElement {
 
     }
 
+    // https://www.geeksforgeeks.org/remove-duplicates-from-unsorted-array-using-map-data-structure/
+    // Booking.com
+
+    fun removeDuplicates3(arr: IntArray) {
+        val hashMap = mutableMapOf<Int, Boolean>()
+        for (i in arr.indices) {
+            if (hashMap[arr[i]] == null) {
+                println("${arr[i]} ")
+            }
+            hashMap[arr[i]] = true
+        }
+        println(arr.contentToString())
+
+    }
+
 
 }
 
 
 fun main() {
 
-    println(RemoveElement().removeElement(intArrayOf(0, 1, 2, 2, 3, 0, 4, 2), 2))
-    println(RemoveElement().removeDuplicates(intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)))
-    println(RemoveElement().removeDuplicates2(intArrayOf(1, 1, 1, 2, 2, 3)))
+    //println(RemoveElement().removeElement(intArrayOf(0, 1, 2, 2, 3, 0, 4, 2), 2))
+    // println(RemoveElement().removeDuplicates(intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)))
+    //println(RemoveElement().removeDuplicates2(intArrayOf(1, 1, 1, 2, 2, 3)))
+    println(RemoveElement().removeDuplicates3(intArrayOf(1, 2, 5, 1, 7, 2, 4, 2)))
 
 }

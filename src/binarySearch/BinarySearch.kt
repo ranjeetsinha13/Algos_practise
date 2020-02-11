@@ -1,3 +1,5 @@
+package binarySearch
+
 class BinarySearch {
 
     fun binarySearchIterative(array: Array<Int>, number: Int): Int {

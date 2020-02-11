@@ -57,11 +57,45 @@ class Zalando {
         return sb.toString()
 
     }
+
+    fun strwithouta3b3F2(A: Int, B: Int): String {
+
+        var A = A
+        var B = B
+        var sb = StringBuilder()
+
+        if (A == 0 || B == 0) {
+            while (A-- > 0) sb.append('a')
+            while (B-- > 0) sb.append('b')
+        } else if (A == B) {
+            while (A == B) {
+                sb.append("ab")
+                A--
+                B--
+            }
+        } else if (A > B) {   // A > B > 0
+            while (B in 1 until A) {
+                sb.append("aab")
+                A -= 2
+                B -= 1
+            }
+        } else {              // B > A > 0
+            while (A in 1 until B) {
+                sb.append("bba")
+                B -= 2
+                A -= 1
+            }
+
+        }
+        return sb.toString()
+
+    }
 }
 
 fun main() {
 
     println(Zalando().strWithout3a3b(9, 2))
     println(Zalando().strwithouta3b3F(4, 1))
+    println(Zalando().strwithouta3b3F2(4, 1))
 
 }

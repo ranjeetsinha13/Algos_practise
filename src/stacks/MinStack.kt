@@ -4,7 +4,7 @@ import java.util.*
 
 //https://leetcode.com/problems/min-stack/
 
-class MinStack() {
+class MinStack {
 
     /** initialize your data structure here. */
 
