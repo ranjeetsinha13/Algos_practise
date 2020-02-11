@@ -39,6 +39,20 @@ class PalindromePermutaion {
 
     }
 
+    // WONT WORK FOR input aa, bb
+    fun isAnagramOptimised(s: String, t: String): Boolean {
+        if (s.length != t.length) return false
+
+        var result = 0
+
+        for (i in s.indices) {
+            result = result.xor(s[i].toInt().xor(t[i].toInt()))
+        }
+        println(result)
+        return result == 0
+    }
+
+
     //https://leetcode.com/problems/find-all-anagrams-in-a-string/
 
     fun findAnagrams(s: String, p: String): List<Int> {
@@ -62,7 +76,7 @@ class PalindromePermutaion {
 fun main() {
 
     println(PalindromePermutaion().palindromePermutation("taco cat"))
-    println(PalindromePermutaion().isAnagram("anagram", "margana"))
+    println(PalindromePermutaion().isAnagramOptimised("anagram", "margana"))
     println(PalindromePermutaion().findAnagrams("abab", "ab"))
 
 }

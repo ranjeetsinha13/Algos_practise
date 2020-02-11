@@ -44,10 +44,10 @@ class LinkedList2 {
 
         while (t1 != null || t2 != null) {
 
-            var sum = (if (t1 != null) t1?.value else 0) +
+            var sum = (if (t1 != null) t1?.value else 0)
                     (if (t2 != null) t2?.value else 0)
 
-            var result = sum + carry
+            var result = sum!! + carry
 
             carry = result / 10
 

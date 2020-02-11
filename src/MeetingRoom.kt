@@ -1,4 +1,6 @@
 import java.util.*
+import kotlin.Comparator
+import kotlin.collections.HashMap
 
 class MeetingRoom {
 
@@ -54,7 +56,33 @@ class MeetingRoom {
 
     }
 
+    fun busiestDay(arrival: IntArray, exit: IntArray): Int {
+        val tm = mutableMapOf<Int, Int>()
+
+        var max = Int.MIN_VALUE
+        var result = -1
+
+        for (i in arrival.indices) {
+            for (j in arrival[i]..exit[i]) {
+                if (tm.containsKey(j)) {
+                    tm[j] = tm[j]!! + 1
+                    if (tm[j]!! > max) {
+                        result = j
+                        max = tm[j]!!
+                    }
+
+                } else {
+                    tm[j] = 1
+                }
+            }
+        }
+        println(tm)
+        return result
+    }
+
 }
+
+class Day(val day: Int, val count: Int)
 
 class Meeting(var startTime: Int, var endTime: Int)
 
@@ -67,9 +95,12 @@ fun main() {
     var input = Array(3) { m1 }
     input[1] = m2
     input[2] = m3
+    input.sort()
 
-    println(MeetingRoom().minMeetingRoom(input))
+    //println(MeetingRoom().minMeetingRoom(input))
 
-    println(MeetingRoom().minMeetingRooms(Array(3) { intArrayOf() }))
+    // println(MeetingRoom().minMeetingRooms(Array(3) { intArrayOf() }))
+
+    println(MeetingRoom().busiestDay(intArrayOf(1, 2, 9, 5, 5), intArrayOf(4, 5, 12, 9, 12)))
 
 }

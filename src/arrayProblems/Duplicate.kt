@@ -4,7 +4,6 @@ class Duplicate {
     fun containsDuplicate(nums: IntArray): Boolean {
         nums.sort()
 
-        print(nums.contentToString())
         for (i in 0 until nums.size - 1) {
             if (nums[i] == nums[i + 1]) return true
         }

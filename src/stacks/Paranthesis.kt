@@ -1,6 +1,7 @@
 package stacks
 
 import java.lang.StringBuilder
+import java.util.*
 
 class Paranthesis {
 
@@ -8,28 +9,43 @@ class Paranthesis {
 
     fun isValid(s: String): Boolean {
 
-        var c1 = 0
-        var c2 = 0
-        var c3 = 0
+        var str = mutableMapOf<Char, Char>()
+        str.put('}', '{')
+        str.put(')', '(')
+        str.put(']', '[')
+
+        var stack = Stack<Char>()
 
         for (ch in s) {
-            when (ch) {
-                '{' -> c1++
-                '(' -> c2++
-                '[' -> c3++
-                '}' -> c1--
-                ')' -> c2--
-                ']' -> c3--
+            if (str.containsKey(ch)) {
+                val topElement: Char? = if (stack.isEmpty()) { '#' } else { stack.pop() }
+                if (topElement != str[ch]) {
+                    return false
+                }
+            } else {
+                stack.push(ch)
             }
-
-            if (c1 < 0 || c2 < 0 || c3 < 0) {
-                return false
-            }
-
         }
+        return stack.isEmpty()
 
-        return (c1 == 0 && c2 == 0 && c3 == 0)
+    }
 
+    fun validParenthesis(str: String): Boolean {
+        if (str.isNullOrEmpty()) return false
+
+        var counter = 0
+
+        for (ch in str) {
+
+            if (ch == ')') {
+                counter++
+
+                if (counter > 0) {
+                    return false
+                }
+            } else counter--
+        }
+        return counter == 0
     }
 
     fun removeUnbalancedParanthesis(s: String, open: Char, close: Char): StringBuilder {
